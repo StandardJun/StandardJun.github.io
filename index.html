@@ -8,235 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #1a1a1a;
-      --muted: #6a6a6a;
-      --border: #e5e5e5;
-      --accent: #1f5fbf;
-      --card-bg: #fafafa;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0e1013;
-        --fg: #e6e8eb;
-        --muted: #9099a3;
-        --border: #22262c;
-        --accent: #6aa7ff;
-        --card-bg: #16191d;
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
-    body {
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Header */
-    header.hero {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-    .avatar {
-      width: 104px; height: 104px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      background: var(--card-bg);
-    }
-    .hero-text h1 {
-      margin: 0 0 4px;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-    }
-    .hero-text h1 .kor { font-weight: 500; color: var(--muted); margin-left: 6px; font-size: 20px; }
-    .hero-text .tagline {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 14.5px;
-    }
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13.5px;
-    }
-    .contact-row a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--fg);
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-    }
-    .contact-row a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
-    .contact-row .sep { color: var(--border); }
-
-    /* Sections */
-    section { margin-bottom: 36px; }
-    h2 {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin: 0 0 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    p { margin: 0 0 12px; }
-
-    /* Entry list */
-    .entry {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4px 16px;
-      margin-bottom: 18px;
-    }
-    .entry:last-child { margin-bottom: 0; }
-    .entry .title {
-      font-weight: 600;
-      font-size: 15.5px;
-    }
-    .entry .meta {
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      color: var(--muted);
-      white-space: nowrap;
-      align-self: start;
-      padding-top: 3px;
-    }
-    .entry .sub {
-      grid-column: 1 / -1;
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 2px;
-    }
-    .entry .body {
-      grid-column: 1 / -1;
-      font-size: 14.5px;
-      margin-top: 4px;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 11.5px;
-      font-family: var(--font-mono);
-      color: var(--accent);
-      background: color-mix(in oklab, var(--accent) 12%, transparent);
-      padding: 1px 7px;
-      border-radius: 3px;
-      margin-left: 6px;
-      vertical-align: 1px;
-    }
-
-    /* Project cards */
-    .projects { display: grid; gap: 14px; }
-    .project {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 18px;
-      background: var(--card-bg);
-    }
-    .project h3 {
-      margin: 0 0 6px;
-      font-size: 15.5px;
-      font-weight: 600;
-    }
-    .project h3 .meta {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 400;
-      margin-left: 8px;
-    }
-    .project p { margin: 0; font-size: 14px; color: var(--fg); }
-    .project .tags {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .project .tag {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 1px 7px;
-      border-radius: 3px;
-    }
-
-    /* Compact list */
-    ul.compact { list-style: none; padding: 0; margin: 0; }
-    ul.compact li {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 6px 0;
-      font-size: 14.5px;
-    }
-    ul.compact li .meta {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 6px 20px;
-      font-size: 14.5px;
-    }
-    .skills-grid dt {
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      padding-top: 2px;
-    }
-    .skills-grid dd { margin: 0; }
-
-    /* Footer */
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 12.5px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* Mobile */
-    @media (max-width: 560px) {
-      .wrap { padding: 32px 20px 64px; }
-      header.hero { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .avatar { width: 80px; height: 80px; font-size: 30px; }
-      .entry { grid-template-columns: 1fr; }
-      .entry .meta { padding-top: 0; }
-      .skills-grid { grid-template-columns: 1fr; gap: 2px 0; }
-      .skills-grid dt { padding-top: 8px; }
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="wrap">
@@ -251,7 +23,7 @@
           <span class="sep">·</span>
           <a href="https://github.com/StandardJun" target="_blank" rel="noopener">GitHub</a>
           <span class="sep">·</span>
-          <a href="https://www.linkedin.com/in/기준-김-20a4a6408" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/%EA%B8%B0%EC%A4%80-%EA%B9%80-20a4a6408/" target="_blank" rel="noopener">LinkedIn</a>
           <span class="sep">·</span>
           <a href="./CV.pdf">CV (PDF)</a>
         </div>
@@ -307,7 +79,7 @@
       <h2>Honors &amp; Awards</h2>
       <ul class="compact">
         <li>
-          <span><strong>Grand Prize</strong>, SNU Mechatronics Competition — <a href="https://github.com/StandardJun/KIH-Keyboard-In-my-Hand" target="_blank" rel="noopener"><em>KIH: Keyboard In my Hand</em></a></span>
+          <span><strong>Grand Prize</strong>, SNU Mechatronics Competition — <a href="./projects/kih.html"><em>KIH: Keyboard In my Hand</em></a></span>
           <span class="meta">Dec 2025</span>
         </li>
       </ul>
@@ -319,34 +91,21 @@
 
         <article class="project">
           <h3>
-            <a href="https://github.com/StandardJun/KIH-Keyboard-In-my-Hand" target="_blank" rel="noopener">KIH: Keyboard In my Hand</a>
+            KIH: Keyboard In my Hand
             <span class="meta">team of 4 · team lead · Grand Prize</span>
           </h3>
           <p>
-            A glove-type wearable Hangul keyboard for eyes-free Korean text entry. 16 tactile
-            switches are embedded across the phalanxes of a pair of gloves (8 per hand) and pressed
-            by the thumbs. Input is sequential rather than chorded; repeated taps on the same
-            button add strokes, mirroring the graphical derivation principle (가획) of Hangul.
-            Enumerates as a plug-and-play USB HID keyboard — no drivers or companion app required.
-          </p>
-          <p>
-            Motivated by three gaps: (a) VR/AR text entry where physical keyboards break down,
-            (b) affordable tactile input for Korean visually-impaired users, and (c) posture-related
-            VDT syndrome (7.05 M reported cases in Korea, 2024).
-          </p>
-          <p>
-            <strong>Results:</strong> KSPC 1.27 (26% over frequency-blind layouts), 9–15 WPM in
-            pilot use, per-user timing calibration stored in EEPROM, total BOM ₩14,184.
-            <strong>Stack:</strong> Arduino Leonardo (ATmega32u4), native USB HID.
-            <strong>Recognition:</strong> Grand Prize, SNU Mechatronics Competition (Dec 2025);
-            exhibited at the 15th SNU College of Engineering Creative Design Festival (2026).
+            A glove-type wearable Hangul keyboard: 16 tactile switches, sequential thumb-press input,
+            with repeated taps mirroring the 가획 principle of Hangul.
           </p>
           <div class="tags">
             <span class="tag">Mechatronics</span>
             <span class="tag">Wearable</span>
             <span class="tag">Hangul IME</span>
-            <span class="tag">Arduino</span>
-            <span class="tag">USB HID</span>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="./projects/kih.html">Details →</a>
+            <a class="btn" href="https://github.com/StandardJun/KIH-Keyboard-In-my-Hand" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </article>
 
@@ -396,8 +155,48 @@
       </ul>
     </section>
 
+    <section id="music">
+      <h2>Music</h2>
+      <p class="section-note">Bands I've played in. Vocals &amp; guitar.</p>
+      <ul class="compact">
+        <li>
+          <span>
+            <strong>Zither</strong> — SNU Mechanical Engineering band · covers
+            (<a href="./music/zither.html">videos</a> ·
+            <a href="https://www.youtube.com/@snu_zither" target="_blank" rel="noopener">channel</a>)
+          </span>
+          <span class="meta">2022 – 2024</span>
+        </li>
+        <li>
+          <span>
+            <strong>Redacted</strong> — covers &amp; originals
+            (<a href="https://www.youtube.com/@Band_bjj" target="_blank" rel="noopener">channel</a>)
+          </span>
+          <span class="meta">2024 – present</span>
+        </li>
+        <li>
+          <span>
+            <strong>Free-fall (자유낙하)</strong> — originals
+            (<a href="https://www.youtube.com/@%EC%9E%90%EC%9C%A0%EB%82%99%ED%95%98-m3v" target="_blank" rel="noopener">channel</a>)
+          </span>
+          <span class="meta">2026 – present</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="photos">
+      <h2>Photos</h2>
+      <p class="section-note">A small gallery — portfolio moments and life beyond engineering. To be filled.</p>
+      <!-- when photos are added, use:
+      <div class="photo-grid">
+        <div class="photo-item"><img src="./photos/portfolio-01.jpg" alt="caption"></div>
+        <div class="photo-item"><img src="./photos/personal-01.jpg" alt="caption"></div>
+      </div>
+      -->
+    </section>
+
     <footer>
-      <span>Last updated: 2026-07-12</span>
+      <span>Last updated: 2026-07-13</span>
       <span>© 2026 Kijun Kim</span>
     </footer>
 

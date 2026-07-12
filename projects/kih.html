@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIH: Keyboard In my Hand — Kijun Kim</title>
+  <meta name="description" content="KIH — a glove-type wearable Hangul keyboard for eyes-free Korean text entry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <a class="back-link" href="../">← Kijun Kim</a>
+
+    <header class="detail-hero">
+      <h1>KIH: Keyboard In my Hand</h1>
+      <div class="meta">Mechatronics · team of 4 · team lead · Dec 2025</div>
+    </header>
+
+    <div class="detail-content">
+
+      <p>
+        A glove-type wearable Hangul keyboard for eyes-free Korean text entry.
+        16 tactile switches are embedded across the phalanxes of a pair of gloves
+        (8 per hand) and pressed by the thumbs. Input is sequential rather than
+        chorded; repeated taps on the same button add strokes, mirroring the
+        graphical derivation principle (가획) of Hangul. Enumerates as a plug-and-play
+        USB HID keyboard — no drivers or companion app required.
+      </p>
+
+      <h3>Motivation</h3>
+      <p>Three gaps drove the design:</p>
+      <ul>
+        <li>VR/AR text entry, where physical keyboards break down;</li>
+        <li>affordable tactile input for Korean visually-impaired users;</li>
+        <li>posture-related VDT syndrome (7.05 M reported cases in Korea, 2024).</li>
+      </ul>
+
+      <h3>Results</h3>
+      <ul>
+        <li><strong>KSPC 1.27</strong> — a 26% improvement over frequency-blind layouts.</li>
+        <li><strong>9–15 WPM</strong> in pilot use across three users.</li>
+        <li>Per-user timing calibration stored in EEPROM.</li>
+        <li>Total BOM cost: <strong>₩14,184</strong>.</li>
+      </ul>
+
+      <h3>Stack</h3>
+      <p>Arduino Leonardo (ATmega32u4), native USB HID. Firmware in Python (89.7%) and C++ (10.3%). Hardware: 16 tactile switches, gloves, wiring harness. MIT license.</p>
+
+      <h3>Recognition</h3>
+      <ul>
+        <li><strong>Grand Prize</strong>, SNU Mechatronics Competition (Dec 2025).</li>
+        <li>Exhibited at the 15th SNU College of Engineering Creative Design Festival (2026).</li>
+      </ul>
+
+      <h3>Role</h3>
+      <p>Team of 4, team lead. Led the design and pitch; earned faculty praise for a compelling presentation.</p>
+
+      <div class="btn-group">
+        <a class="btn btn-primary" href="https://github.com/StandardJun/KIH-Keyboard-In-my-Hand" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="../">← Back to profile</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <span>Last updated: 2026-07-13</span>
+      <span>© 2026 Kijun Kim</span>
+    </footer>
+
+  </div>
+</body>
+</html>
