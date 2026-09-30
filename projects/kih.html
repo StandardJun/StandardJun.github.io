@@ -17,7 +17,7 @@
 
     <header class="detail-hero">
       <h1>KIH: Keyboard In my Hand</h1>
-      <div class="meta">Mechatronics · team of 4 · team lead · Dec 2025</div>
+      <div class="meta">Mechatronics · XR · team lead · Dec 2025 – Sep 2026</div>
     </header>
 
     <div class="detail-content">
@@ -61,12 +61,22 @@
       </figure>
 
       <h3>Results</h3>
+      <p>
+        A within-subject study with 20 participants compared KIH against a TV-style cursor
+        on-screen keyboard. After 10 minutes of training per condition, each participant completed
+        15 one-minute trials typing random words without looking at the device.
+      </p>
       <ul>
-        <li><strong>KSPC 1.27</strong> — a 26% improvement over frequency-blind layouts.</li>
-        <li><strong>9–15 WPM</strong> in pilot use across three users.</li>
-        <li>Per-user timing calibration stored in EEPROM.</li>
-        <li>Total BOM cost: <strong>₩14,184</strong>.</li>
+        <li><strong>2.3 → 10.6 WPM</strong> from trial 1 to 15 (4.6×), while the cursor keyboard plateaued at 5.6 → 7.5 WPM; KIH overtakes it at around trial 9.</li>
+        <li><strong>Error rate 17.2% → 4.1%</strong> — speed and accuracy improved together.</li>
+        <li><strong>KSPC 1.27</strong> — a 26% improvement over frequency-blind layouts; 74.2% of input is a single tap.</li>
+        <li>Per-user tap-window calibration; total BOM cost <strong>₩14,184</strong>.</li>
       </ul>
+      <figure class="figure">
+        <img src="https://raw.githubusercontent.com/StandardJun/KIH-Keyboard-In-my-Hand/main/docs/images/results_learning_curve.png"
+             alt="Learning curves and error rates for KIH vs TV on-screen keyboard">
+        <figcaption>Learning curves over 15 trials: KIH keeps improving; the cursor keyboard is saturated from the start.</figcaption>
+      </figure>
       <figure class="figure">
         <img src="https://raw.githubusercontent.com/StandardJun/KIH-Keyboard-In-my-Hand/main/docs/images/freq_vs_taps.png"
              alt="Jamo frequency vs. required tap count">
@@ -74,17 +84,29 @@
       </figure>
 
       <h3>System &amp; Stack</h3>
-      <p>Arduino Leonardo (ATmega32u4), native USB HID. Firmware in Python (89.7%) and C++ (10.3%). Hardware: 16 tactile switches, gloves, wiring harness. MIT license.</p>
+      <p>Arduino Leonardo (ATmega32u4), native USB HID. Firmware in C++ (Arduino); calibration, study and analysis tools in Python. Hardware: 16 tactile switches, gloves, wiring harness. MIT license.</p>
       <figure class="figure">
         <img src="https://raw.githubusercontent.com/StandardJun/KIH-Keyboard-In-my-Hand/main/docs/images/system_overview.png"
              alt="System overview: prototype with signal flow diagram">
         <figcaption>System overview: prototype with signal flow.</figcaption>
       </figure>
 
+      <h3>Beyond the Glove: KIH-XR</h3>
+      <p>
+        The input method does not depend on the glove. KIH-XR runs the same 16-spot layout on
+        camera hand tracking alone: MediaPipe estimates 21 joints per hand, virtual buttons are placed
+        on the phalanxes, and a thumb-tip touch counts as a tap. The firmware's multi-tap state machine
+        is ported unchanged, and a calibration wizard fits each user's sweet spots, tap radius and tap
+        window. Only the joint source is device-specific, so headsets that already track hands
+        (Vision Pro, Quest) could use the same layout without extra hardware. Built as a live
+        webcam demo for the Creative Design Festival.
+      </p>
+      <p><a href="https://github.com/StandardJun/KIH-Keyboard-In-my-Hand/tree/main/xr" target="_blank" rel="noopener">KIH-XR source &amp; docs ↗</a></p>
+
       <h3>Recognition</h3>
       <ul>
+        <li><strong>Bronze Prize</strong>, 15th SNU College of Engineering Creative Design Festival (Sep 2026).</li>
         <li><strong>Grand Prize</strong>, SNU Mechatronics Competition (Dec 2025).</li>
-        <li>Exhibited at the 15th SNU College of Engineering Creative Design Festival (2026).</li>
       </ul>
 
       <h3>Role</h3>
@@ -98,7 +120,7 @@
     </div>
 
     <footer>
-      <span>Last updated: 2026-07-13</span>
+      <span>Last updated: 2026-09-30</span>
       <span>© 2026 Kijun Kim</span>
     </footer>
 
