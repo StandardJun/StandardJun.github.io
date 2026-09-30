@@ -35,8 +35,8 @@
       <p>
         I'm an undergraduate at Seoul National University's Department of Mechanical Engineering,
         working across mechatronics design and robotics research. I'm currently a research intern at
-        <a href="#experience">RPM Lab</a> (advised by Prof. Ayoung Kim), studying multi-sensor SLAM on
-        quadruped robots. On the side, I enjoy building things with LLM tooling — I run
+        <a href="#experience">RPM Lab</a> (advised by Prof. Ayoung Kim), building a ground-truth system
+        for multi-sensor navigation on quadruped robots. On the side, I enjoy building things with LLM tooling — I run
         <em>Gwanak AI Club</em>, an SNU community of ~330 AI practitioners.
       </p>
     </section>
@@ -54,11 +54,15 @@
       <h2>Research &amp; Experience</h2>
 
       <div class="entry">
-        <div class="title">Undergraduate Research Intern — RPM Lab, SNU</div>
+        <div class="title">Undergraduate Research Intern (UROP) — RPM Lab, SNU</div>
         <div class="meta">Jun 2026 – Present</div>
-        <div class="sub">Advisor: Prof. Ayoung Kim</div>
+        <div class="sub">Advisor: Prof. Ayoung Kim · Mentor: Wooseong Yang</div>
         <div class="body">
-          Working on multi-sensor SLAM for the Spot quadruped robot, building on PALoc.
+          Developing a per-sensor ground-truth acquisition system for navigation on the Spot quadruped
+          robot (LiDAR, IMU, camera, radar), built on PALoc prior-map localization. Traced pipeline
+          failures to invalid LiDAR points in the raw data, replaced the odometry front-end with
+          FAST-LIVO2, and added floor-aware gating to the back-end so multi-floor sequences no longer
+          collapse onto the wrong floor.
         </div>
       </div>
 
