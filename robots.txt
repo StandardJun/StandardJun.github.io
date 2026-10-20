@@ -1,0 +1,4 @@
+# 기초통계학 피어튜터링 자료실 PDF는 검색엔진이 수집하지 않게 한다.
+# (stat-tutoring-2026-2 저장소의 GitHub Pages 경로. 프로필 사이트에는 영향 없음)
+User-agent: *
+Disallow: /stat-tutoring-2026-2/files/
